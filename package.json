@@ -1,0 +1,44 @@
+{
+  "name": "@sotto/learning-model",
+  "version": "0.1.0",
+  "description": "Bayesian learner mastery and practice prioritization model for Sotto",
+  "license": "MIT",
+  "author": "Sotto <hello@example.com>",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SottoFM/learning-model.git"
+  },
+  "publishConfig": {
+    "access": "restricted",
+    "main": "./dist/index.js",
+    "module": "./dist/index.mjs",
+    "types": "./dist/index.d.ts",
+    "exports": {
+      ".": {
+        "import": "./dist/index.mjs",
+        "require": "./dist/index.js",
+        "types": "./dist/index.d.ts"
+      }
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^4.0.18",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.18"
+  }
+}
